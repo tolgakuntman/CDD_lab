@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Goktug/UART/UART.runs/synth_1'
+HD_PWD='C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/UART.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
