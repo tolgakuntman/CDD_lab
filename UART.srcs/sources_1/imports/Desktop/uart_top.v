@@ -43,6 +43,14 @@ module uart_top #(
      .oTxBusy(wTxBusy),
      .oTxDone(wTxDone)
      );
+     uart_rx #(  .CLK_FREQ(CLK_FREQ), .BAUD_RATE(BAUD_RATE) )
+  UART_RX_INST
+    (.iClk(iClk),
+     .iRst(iRst),
+     .iRxSerial(iRx),
+     .oRxByte(wRxByte),
+     .oRxDone(wRxDone)
+     );
      
   reg [$clog2(NBYTES):0] rCnt;
   
@@ -68,11 +76,28 @@ module uart_top #(
           end
           
         s_WAIT_RX :
-          begin
-            rBuffer <= "Hello World!";       
-            rFSM <= s_TX; 
-          end
-             
+        if(rCnt<NBYTES)
+        begin
+          if (wRxDone) begin
+            rBuffer <= {rBuffer[(NBYTES-1)*8-1:0], wRxByte};
+            rCnt    <= rCnt + 1;
+            rFSM=s_WAIT_RX;
+           end
+           else begin
+            begin
+                rBuffer <= rBuffer;
+                rFSM <= s_WAIT_RX;
+                rCnt <= rCnt;
+                end
+           end
+         end
+         else begin
+         begin
+            rBuffer <= rBuffer;
+            rFSM <= s_TX;
+            rCnt <= 0;
+            end
+         end    
         s_TX :
           begin
             if ( (rCnt < NBYTES) && (wTxBusy ==0) ) 
@@ -104,7 +129,7 @@ module uart_top #(
               
             s_DONE :
               begin
-                rFSM <= s_DONE;
+                rFSM <= s_IDLE;
               end 
 
             default :

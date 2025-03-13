@@ -2,8 +2,9 @@
 2020.1
 May 27 2020
 20:09:33
-C:/Users/Goktug/UART/UART.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
-C:/Users/Goktug/UART/UART.srcs/sim_1/imports/Desktop/uart_top_TB.v,1741170046,verilog,,,,uart_top_TB,,,,,,,,
-C:/Users/Goktug/UART/UART.srcs/sim_1/imports/Desktop/uart_tx_TB.v,1741169729,verilog,,,,uart_tx_TB,,,,,,,,
-C:/Users/Goktug/UART/UART.srcs/sources_1/imports/Desktop/uart_top.v,1741170035,verilog,,C:/Users/Goktug/UART/UART.srcs/sources_1/imports/Desktop/uart_tx.v,,uart_top,,,,,,,,
-C:/Users/Goktug/UART/UART.srcs/sources_1/imports/Desktop/uart_tx.v,1741169675,verilog,,C:/Users/Goktug/UART/UART.srcs/sim_1/imports/Desktop/uart_top_TB.v,,uart_tx,,,,,,,,
+Z:/Desktop/cdd_labs/cdd_lab_git/UART.sim/sim_1/behav/xsim/glbl.v,1741179326,verilog,,,,glbl,,,,,,,,
+Z:/Desktop/cdd_labs/cdd_lab_git/UART.srcs/sim_1/imports/Desktop/uart_rx_TB.v,1741184474,verilog,,,,uart_rx_TB,,,,,,,,
+Z:/Desktop/cdd_labs/cdd_lab_git/UART.srcs/sim_1/imports/Desktop/uart_top_TB.v,1741179326,verilog,,,,uart_top_TB,,,,,,,,
+Z:/Desktop/cdd_labs/cdd_lab_git/UART.srcs/sources_1/imports/Desktop/uart_top.v,1741179326,verilog,,Z:/Desktop/cdd_labs/cdd_lab_git/UART.srcs/sources_1/imports/Desktop/uart_tx.v,,uart_top,,,,,,,,
+Z:/Desktop/cdd_labs/cdd_lab_git/UART.srcs/sources_1/imports/Desktop/uart_tx.v,1741179326,verilog,,Z:/Desktop/cdd_labs/cdd_lab_git/UART.srcs/sim_1/imports/Desktop/uart_rx_TB.v,,uart_tx,,,,,,,,
+Z:/Desktop/cdd_labs/cdd_lab_git/UART.srcs/sources_1/new/uart_rx.v,1741194381,verilog,,Z:/Desktop/cdd_labs/cdd_lab_git/UART.srcs/sources_1/imports/Desktop/uart_tx.v,,uart_rx,,,,,,,,

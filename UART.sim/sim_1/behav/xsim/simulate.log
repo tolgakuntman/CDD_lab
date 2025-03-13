@@ -1,2 +1,3 @@
 Vivado Simulator 2020.1
 Time resolution is 1 ps
+$stop called at time : 644 ns : File "Z:/Desktop/cdd_labs/cdd_lab_git/UART.srcs/sim_1/imports/Desktop/uart_rx_TB.v" Line 72
