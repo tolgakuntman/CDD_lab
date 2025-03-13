@@ -32,8 +32,22 @@ module uart_top #(
   
   wire        wTxBusy;
   wire        wTxDone;
-      
-  uart_tx #(  .CLK_FREQ(CLK_FREQ), .BAUD_RATE(BAUD_RATE) )
+  
+  // connection to RX
+  reg rRxSerial;
+  wire [7:0] wRxByte;
+  wire wRxDone;
+  
+  uart_rx #(  .CLK_FREQ(CLK_FREQ), .BAUD_RATE(BAUD_RATE) )
+  UART_RX_INST
+    (.iClk(iClk),
+     .iRst(iRst),
+     .iRxSerial(iRx),
+     .oRxByte(wRxByte),
+     .oRxDone(wRxDone)
+     );
+     
+     uart_tx #(  .CLK_FREQ(CLK_FREQ), .BAUD_RATE(BAUD_RATE) )
   UART_TX_INST
     (.iClk(iClk),
      .iRst(iRst),
@@ -43,16 +57,9 @@ module uart_top #(
      .oTxBusy(wTxBusy),
      .oTxDone(wTxDone)
      );
-     uart_rx #(  .CLK_FREQ(CLK_FREQ), .BAUD_RATE(BAUD_RATE) )
-  UART_RX_INST
-    (.iClk(iClk),
-     .iRst(iRst),
-     .iRxSerial(iRx),
-     .oRxByte(wRxByte),
-     .oRxDone(wRxDone)
-     );
      
   reg [$clog2(NBYTES):0] rCnt;
+  reg [3:0] rCntRx; 
   
   always @(posedge iClk)
   begin
@@ -63,8 +70,9 @@ module uart_top #(
       rFSM <= s_IDLE;
       rTxStart <= 0;
       rCnt <= 0;
+      rCntRx <= 0;
       rTxByte <= 0;
-      rBuffer <= 0;
+      rBuffer <= "Hello World!";
     end 
   else 
     begin
@@ -73,31 +81,29 @@ module uart_top #(
         s_IDLE :
           begin
             rFSM <= s_WAIT_RX;
+            rTxStart <= 0;
+            rCnt <= 0;
+            rCntRx <= 0;
+            rTxByte <= 0;
           end
           
         s_WAIT_RX :
-        if(rCnt<NBYTES)
-        begin
-          if (wRxDone) begin
-            rBuffer <= {rBuffer[(NBYTES-1)*8-1:0], wRxByte};
-            rCnt    <= rCnt + 1;
-            rFSM=s_WAIT_RX;
-           end
-           else begin
-            begin
+          begin
+            if (wRxDone == 1 && rCntRx == (NBYTES-1))begin
+                rCntRx <= rCntRx;
+                rBuffer <= { rBuffer[NBYTES*8-9:0], wRxByte };      
+                rFSM <= s_TX;
+            end else if (wRxDone == 1) begin
+                rCntRx <= rCntRx + 1;
+                rBuffer <= { rBuffer[NBYTES*8-9:0], wRxByte };      
+                rFSM <= s_WAIT_RX;
+            end else begin
+                rCntRx <= rCntRx;
                 rBuffer <= rBuffer;
                 rFSM <= s_WAIT_RX;
-                rCnt <= rCnt;
-                end
-           end
-         end
-         else begin
-         begin
-            rBuffer <= rBuffer;
-            rFSM <= s_TX;
-            rCnt <= 0;
-            end
-         end    
+            end        
+          end
+             
         s_TX :
           begin
             if ( (rCnt < NBYTES) && (wTxBusy ==0) ) 
