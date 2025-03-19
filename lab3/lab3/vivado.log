@@ -1,0 +1,428 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Mar 19 10:30:30 2025
+# Process ID: 4148
+# Current directory: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7932 C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.xpr
+# Log file: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/vivado.log
+# Journal file: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+oopen_project C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.xprIINFO: [Project 1-313] Project file moved from 'Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3' since last save.SScanning sources...FFinished scanning sourcesIINFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specifiedIINFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.oopen_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 1013.953 ; gain = 0.000uupdate_compile_order -fileset sources_1egenerate_target all [get_files  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+INFO: [BD 41-1637] Generated targets are already up-to-date for block design 'design_1' - hence not re-generating.
+export_ip_user_files -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+export_simulation -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files -ipstatic_source_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/modelsim} {questa=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/questa} {riviera=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/riviera} {activehdl=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+update_module_reference design_1_uart_top_0_0
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "(spirit:decode(id('MODELPARAM_VALUE.OPERAND_WIDTH')) / 8)" into user parameter "NBYTES".
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Adding component instance block -- xilinx.com:module_ref:uart_top:1.0 - uart_top_0
+Adding component instance block -- xilinx.com:module_ref:Debounce_Switch:1.0 - Debounce_Switch_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /iClk(clk) and /uart_top_0/iClk(undef)
+Successfully read diagram <design_1> from BD file <C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd>
+Upgrading 'C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_uart_top_0_0 from uart_top_v1_0 1.0 to uart_top_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /iClk(clk) and /uart_top_0_upgraded_ipi/iClk(undef)
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+upgrade_ip: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1013.953 ; gain = 0.000
+update_module_reference: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1013.953 ; gain = 0.000
+update_module_reference design_1_Debounce_Switch_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'i_Clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-5661] Bus Interface 'i_Clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_Debounce_Switch_0_0 from Debounce_Switch_v1_0 1.0 to Debounce_Switch_v1_0 1.0
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+launch_runs synth_1 -jobs 28
+[Wed Mar 19 10:32:21 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1/runme.log
+generate_target all [get_files  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block uart_top_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block Debounce_Switch_0 .
+Exporting to file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+export_ip_user_files -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_uart_top_0_0_synth_1 design_1_Debounce_Switch_0_0_synth_1 -jobs 28
+[Wed Mar 19 10:34:04 2025] Launched design_1_uart_top_0_0_synth_1, design_1_Debounce_Switch_0_0_synth_1...
+Run output will be captured here:
+design_1_uart_top_0_0_synth_1: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1/runme.log
+design_1_Debounce_Switch_0_0_synth_1: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_Debounce_Switch_0_0_synth_1/runme.log
+export_simulation -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files -ipstatic_source_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/modelsim} {questa=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/questa} {riviera=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/riviera} {activehdl=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+update_module_reference design_1_uart_top_0_0
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "(spirit:decode(id('MODELPARAM_VALUE.OPERAND_WIDTH')) / 8)" into user parameter "NBYTES".
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_uart_top_0_0 from uart_top_v1_0 1.0 to uart_top_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /iClk(clk) and /uart_top_0_upgraded_ipi/iClk(undef)
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+launch_runs synth_1 -jobs 28
+[Wed Mar 19 10:34:35 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 28
+[Wed Mar 19 10:35:07 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 28
+[Wed Mar 19 10:35:56 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2020.1.0
+  **** Build date : May 14 2020-03:10:29
+    ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1060.020 ; gain = 4.488
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+set_property PROGRAM.FILE {C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1435] Device xc7z020 (JTAG device index = 1) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-1435] Device xc7z020 (JTAG device index = 1) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+update_module_reference design_1_uart_top_0_0
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "(spirit:decode(id('MODELPARAM_VALUE.OPERAND_WIDTH')) / 8)" into user parameter "NBYTES".
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_uart_top_0_0 from uart_top_v1_0 1.0 to uart_top_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /iClk(clk) and /uart_top_0_upgraded_ipi/iClk(undef)
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+generate_target all [get_files  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block uart_top_0 .
+Exporting to file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+export_ip_user_files -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_uart_top_0_0_synth_1 -jobs 28
+[Wed Mar 19 10:45:29 2025] Launched design_1_uart_top_0_0_synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1/runme.log
+export_simulation -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files -ipstatic_source_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/modelsim} {questa=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/questa} {riviera=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/riviera} {activehdl=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1
+
+launch_runs synth_1 -jobs 28
+[Wed Mar 19 10:45:40 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 28
+[Wed Mar 19 10:46:11 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 28
+[Wed Mar 19 10:47:17 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+generate_target all [get_files  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+INFO: [BD 41-1637] Generated targets are already up-to-date for block design 'design_1' - hence not re-generating.
+export_ip_user_files -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+export_simulation -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files -ipstatic_source_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/modelsim} {questa=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/questa} {riviera=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/riviera} {activehdl=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1
+
+update_module_reference design_1_uart_top_0_0
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "((spirit:decode(id('MODELPARAM_VALUE.OPERAND_WIDTH')) / 8) + 1)" into user parameter "NBYTES".
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_uart_top_0_0 from uart_top_v1_0 1.0 to uart_top_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /iClk(clk) and /uart_top_0_upgraded_ipi/iClk(undef)
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+launch_runs synth_1 -jobs 28
+[Wed Mar 19 10:58:47 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 28
+[Wed Mar 19 10:59:38 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 28
+[Wed Mar 19 11:00:21 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+generate_target all [get_files  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block uart_top_0 .
+Exporting to file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+export_ip_user_files -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_uart_top_0_0_synth_1 -jobs 28
+[Wed Mar 19 11:06:00 2025] Launched design_1_uart_top_0_0_synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1/runme.log
+export_simulation -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files -ipstatic_source_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/modelsim} {questa=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/questa} {riviera=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/riviera} {activehdl=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1
+
+update_module_reference design_1_uart_top_0_0
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "((spirit:decode(id('MODELPARAM_VALUE.OPERAND_WIDTH')) / 8) + 1)" into user parameter "NBYTES".
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd'
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1
+
+INFO: [IP_Flow 19-1972] Upgraded design_1_uart_top_0_0 from uart_top_v1_0 1.0 to uart_top_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /iClk(clk) and /uart_top_0_upgraded_ipi/iClk(undef)
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+launch_runs synth_1 -jobs 28
+[Wed Mar 19 11:06:13 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 28
+[Wed Mar 19 11:06:57 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 28
+[Wed Mar 19 11:08:00 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+generate_target all [get_files  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block uart_top_0 .
+Exporting to file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+export_ip_user_files -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_uart_top_0_0_synth_1 -jobs 28
+[Wed Mar 19 11:13:00 2025] Launched design_1_uart_top_0_0_synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1/runme.log
+export_simulation -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files -ipstatic_source_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/modelsim} {questa=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/questa} {riviera=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/riviera} {activehdl=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1
+
+update_module_reference design_1_uart_top_0_0
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "((spirit:decode(id('MODELPARAM_VALUE.OPERAND_WIDTH')) / 8) + 1)" into user parameter "NBYTES".
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd'
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1
+
+INFO: [IP_Flow 19-1972] Upgraded design_1_uart_top_0_0 from uart_top_v1_0 1.0 to uart_top_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /iClk(clk) and /uart_top_0_upgraded_ipi/iClk(undef)
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+launch_runs synth_1 -jobs 28
+[Wed Mar 19 11:13:13 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 28
+[Wed Mar 19 11:13:44 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 28
+[Wed Mar 19 11:14:34 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+generate_target all [get_files  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block uart_top_0 .
+Exporting to file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+export_ip_user_files -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_uart_top_0_0_synth_1 -jobs 28
+[Wed Mar 19 11:25:52 2025] Launched design_1_uart_top_0_0_synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1/runme.log
+export_simulation -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files -ipstatic_source_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/modelsim} {questa=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/questa} {riviera=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/riviera} {activehdl=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1
+
+update_module_reference design_1_uart_top_0_0
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "((spirit:decode(id('MODELPARAM_VALUE.OPERAND_WIDTH')) / 8) + 1)" into user parameter "NBYTES".
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd'
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1
+
+INFO: [IP_Flow 19-1972] Upgraded design_1_uart_top_0_0 from uart_top_v1_0 1.0 to uart_top_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /iClk(clk) and /uart_top_0_upgraded_ipi/iClk(undef)
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+launch_runs synth_1 -jobs 28
+[Wed Mar 19 11:26:03 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 28
+[Wed Mar 19 11:26:44 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 28
+[Wed Mar 19 11:27:45 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+generate_target all [get_files  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block uart_top_0 .
+Exporting to file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+export_ip_user_files -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_uart_top_0_0_synth_1 -jobs 28
+[Wed Mar 19 11:31:00 2025] Launched design_1_uart_top_0_0_synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1/runme.log
+export_simulation -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files -ipstatic_source_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/modelsim} {questa=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/questa} {riviera=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/riviera} {activehdl=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1
+
+update_module_reference design_1_uart_top_0_0
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "((spirit:decode(id('MODELPARAM_VALUE.OPERAND_WIDTH')) / 8) + 1)" into user parameter "NBYTES".
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd'
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1
+
+INFO: [IP_Flow 19-1972] Upgraded design_1_uart_top_0_0 from uart_top_v1_0 1.0 to uart_top_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /iClk(clk) and /uart_top_0_upgraded_ipi/iClk(undef)
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+launch_runs synth_1 -jobs 28
+[Wed Mar 19 11:31:16 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 28
+[Wed Mar 19 11:31:52 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 28
+[Wed Mar 19 11:32:39 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+generate_target all [get_files  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+Wrote  : <C:\Users\Goktug\Desktop\CDD_LAB\CDD_lab\lab3\lab3\lab3.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block uart_top_0 .
+Exporting to file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+export_ip_user_files -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_uart_top_0_0_synth_1 -jobs 28
+[Wed Mar 19 11:40:07 2025] Launched design_1_uart_top_0_0_synth_1...
+Run output will be captured here: C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_uart_top_0_0_synth_1/runme.log
+export_simulation -of_objects [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files -ipstatic_source_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/modelsim} {questa=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/questa} {riviera=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/riviera} {activehdl=C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1
+
+update_module_reference design_1_uart_top_0_0
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "((spirit:decode(id('MODELPARAM_VALUE.OPERAND_WIDTH')) / 8) + 1)" into user parameter "NBYTES".
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/bd/design_1/design_1.bd'

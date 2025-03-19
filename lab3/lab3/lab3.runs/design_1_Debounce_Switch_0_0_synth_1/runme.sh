@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.runs/design_1_Debounce_Switch_0_0_synth_1'
+HD_PWD='C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/design_1_Debounce_Switch_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

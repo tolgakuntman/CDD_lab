@@ -2,8 +2,11 @@
 2020.1
 May 27 2020
 20:09:33
-Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
-Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sim_1/imports/Downloads/mp_adder_TB.v,1742368938,verilog,,,,mp_adder_TB,,,,,,,,
-Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/Downloads/mp_adder.v,1742368935,verilog,,Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/new/ripple_carry_adder_Nb.v,,mp_adder,,,,,,,,
-Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/new/full_adder.v,1742371039,verilog,,Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/Downloads/mp_adder.v,,full_adder,,,,,,,,
-Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/new/ripple_carry_adder_Nb.v,1739954769,verilog,,Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sim_1/imports/Downloads/mp_adder_TB.v,,ripple_carry_adder_Nb,,,,,,,,
+C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.sim/sim_1/behav/xsim/glbl.v,1742372745,verilog,,,,glbl,,,,,,,,
+C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sim_1/imports/Downloads/uart_top_TB.v,1742381978,verilog,,,,uart_top_TB,,,,,,,,
+C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/Downloads/mp_adder.v,1742372745,verilog,,C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/new/ripple_carry_adder_Nb.v,,mp_adder,,,,,,,,
+C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/new/full_adder.v,1742372745,verilog,,C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/Downloads/mp_adder.v,,full_adder,,,,,,,,
+C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/new/ripple_carry_adder_Nb.v,1742372745,verilog,,C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/new/uart_rx.v,,ripple_carry_adder_Nb,,,,,,,,
+C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/imports/Desktop/uart_top.v,1742380761,verilog,,C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/imports/Desktop/uart_tx.v,,uart_top,,,,,,,,
+C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/imports/Desktop/uart_tx.v,1742376574,verilog,,C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sim_1/imports/Downloads/uart_top_TB.v,,uart_tx,,,,,,,,
+C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/new/uart_rx.v,1742376574,verilog,,C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/imports/Desktop/uart_top.v,,uart_rx,,,,,,,,

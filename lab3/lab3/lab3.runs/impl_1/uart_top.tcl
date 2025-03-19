@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.runs/impl_1/uart_top.tcl"
+  variable script "C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/impl_1/uart_top.tcl"
   variable category "vivado_impl"
 }
 
@@ -114,8 +114,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "Implementation" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -124,9 +122,9 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param chipscope.maxJobs 1
+  set_param chipscope.maxJobs 7
   open_checkpoint uart_top_routed.dcp
-  set_property webtalk.parent_dir Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.cache/wt [current_project]
+  set_property webtalk.parent_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/wt [current_project]
 set_property TOP uart_top [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

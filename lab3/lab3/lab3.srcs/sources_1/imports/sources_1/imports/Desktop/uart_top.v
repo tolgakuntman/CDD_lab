@@ -2,8 +2,8 @@
 
 module uart_top #(
     parameter   OPERAND_WIDTH = 512,
-    parameter   ADDER_WIDTH   = 16,
-    parameter   NBYTES        = OPERAND_WIDTH / 8,    
+    parameter   ADDER_WIDTH   = 8,
+    parameter   NBYTES        = OPERAND_WIDTH / 8 + 1,    
     // values for the UART (in case we want to change them)
     parameter   CLK_FREQ      = 125_000_000,
     parameter   BAUD_RATE     = 115_200
@@ -83,7 +83,7 @@ module uart_top #(
     );
      
   reg [$clog2(NBYTES):0] rCnt;
-  reg [3:0] rCntRx; 
+  reg [$clog2(NBYTES):0] rCntRx; 
   
   always @(posedge iClk)
   begin
@@ -96,7 +96,9 @@ module uart_top #(
       rCnt <= 0;
       rCntRx <= 0;
       rTxByte <= 0;
-      rBuffer <= "Hello World!";
+      rOpA <= 0;
+      rOpB <= 0;
+      rBuffer <= 0;
     end 
   else 
     begin
@@ -109,38 +111,44 @@ module uart_top #(
             rCnt <= 0;
             rCntRx <= 0;
             rTxByte <= 0;
+            rOpA <= 0;
+            rOpB <= 0;
           end
           
         s_WAIT_RX_OP1 :
           begin
-            if (wRxDone == 1 && rCntRx == (NBYTES-1))begin
+            if (wRxDone == 1 && rCntRx == (NBYTES-2))begin
                 rCntRx <= 0;
-                rOpA <= { rOpA[NBYTES*8-9:0], wRxByte };      
+                rOpA <= { rBuffer[NBYTES*8-9:0], wRxByte };      
                 rFSM <= s_WAIT_RX_OP2;
             end else if (wRxDone == 1) begin
                 rCntRx <= rCntRx + 1;
-                rOpA <= { rOpA[NBYTES*8-9:0], wRxByte };      
+                rBuffer <= { rBuffer[NBYTES*8-9:0], wRxByte };   
+                rOpA <= rOpA;   
                 rFSM <= s_WAIT_RX_OP1;
             end else begin
                 rCntRx <= rCntRx;
                 rOpA <= rOpA;
+                rBuffer <= rBuffer;
                 rFSM <= s_WAIT_RX_OP1;
             end        
           end
         s_WAIT_RX_OP2:
           begin
-            if (wRxDone == 1 && rCntRx == (NBYTES-1))begin
-                rCntRx <= 0;
-                rOpB <= { rOpB[NBYTES*8-9:0], wRxByte };      
+            if (wRxDone == 1 && rCntRx == (NBYTES-2))begin
+                rCntRx <= rCntRx;
+                rOpB <= { rBuffer[NBYTES*8-9:0], wRxByte };      
                 rFSM <= s_TX;
             end else if (wRxDone == 1) begin
                 rCntRx <= rCntRx + 1;
-                rOpB <= { rOpB[NBYTES*8-9:0], wRxByte };      
-                rFSM <= s_WAIT_RX_OP1;
+                rBuffer <= { rBuffer[NBYTES*8-9:0], wRxByte };  
+                rOpB <= rOpB;    
+                rFSM <= s_WAIT_RX_OP2;
             end else begin
                 rCntRx <= rCntRx;
+                rBuffer <= rBuffer;
                 rOpB <= rOpB;
-                rFSM <= s_WAIT_RX_OP1;
+                rFSM <= s_WAIT_RX_OP2;
             end   
           end
         s_START_ADD:
@@ -151,7 +159,7 @@ module uart_top #(
         s_WAIT_ADD:
           begin
             rStartAdd <= 0;
-            if(wDoneAdd)
+            if(wDoneAdd==1)
               begin
                 rBufferOut<=wResAdd;
                 rFSM <= s_TX;
@@ -168,7 +176,7 @@ module uart_top #(
                 rFSM <= s_WAIT_TX;
                 rTxStart <= 1; 
                 rTxByte <= rBufferOut[NBYTES*8-1:NBYTES*8-8];            // we send the uppermost byte
-                rBuffer <= {rBufferOut[NBYTES*8-9:0] , 8'b0000_0000};    // we shift from right to left
+                rBufferOut <= {rBufferOut[NBYTES*8-9:0] , 8'b0000_0000};    // we shift from right to left
                 rCnt <= rCnt + 1;
               end 
             else 
