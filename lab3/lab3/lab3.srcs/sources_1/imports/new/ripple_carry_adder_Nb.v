@@ -28,28 +28,19 @@ module ripple_carry_adder_Nb #(
     output  wire [ADDER_WIDTH-1:0]  oSum, 
     output  wire                    oCarry
 );
-    wire [ADDER_WIDTH-2:0] midCarry;
-
+   wire [ADDER_WIDTH:0] wC;
+    assign wC[0] = iCarry;
+    
     genvar i;
+    
     generate 
-        for(i=0; i<ADDER_WIDTH; i=i+1) begin : adder_chain
-            if(i == 0) begin
-                full_adder fa_inst (
-                    .iA(iA[0]), .iB(iB[0]), .iCarry(iCarry), 
-                    .oSum(oSum[0]), .oCarry(midCarry[0])
-                );
-            end else if(i == ADDER_WIDTH-1) begin
-                full_adder fa_inst (
-                    .iA(iA[i]), .iB(iB[i]), .iCarry(midCarry[i-1]), 
-                    .oSum(oSum[i]), .oCarry(oCarry)
-                );
-            end else begin
-                full_adder fa_inst (
-                    .iA(iA[i]), .iB(iB[i]), .iCarry(midCarry[i-1]), 
-                    .oSum(oSum[i]), .oCarry(midCarry[i])
-                );
-            end
-        end
+        for (i=0; i < ADDER_WIDTH; i = i+1)
+        begin
+            full_adder FAs
+                (.iA(iA[i]), .iB(iB[i]), .iCarry(wC[i]),.oCarry(wC[i+1]), .oSum(oSum[i]));
+        end 
     endgenerate
+     
+    assign oCarry = wC[ADDER_WIDTH];
 endmodule
 

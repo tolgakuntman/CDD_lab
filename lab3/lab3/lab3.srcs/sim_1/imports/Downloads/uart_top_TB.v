@@ -1,12 +1,7 @@
 `timescale 1ns / 1ps
 
 module uart_top_TB ();
-   localparam CLOCK_PERIOD_NS = 100;
-  
-  localparam OPERAND_WIDTH   = 512; 
-  localparam ADDER_WIDTH     = 8; 
-      localparam   NBYTES        = OPERAND_WIDTH / 8 + 1;
-
+ 
   // Define signals for module under test
   reg  rClk = 0;
   reg  rRst = 0;
@@ -16,12 +11,11 @@ module uart_top_TB ();
   wire [7:0] wRxByte;
   wire wTxBusy, wTxDone, wRxDone;
   integer i;
-      reg [OPERAND_WIDTH-1:0]   rA, rB;
-
+  
   // We downscale the values in the simulation
   // this will give CLKS_PER_BIT = 100 / 10 = 10
-  localparam CLK_FREQ_inst  = 100;
-  localparam BAUD_RATE_inst = 10;
+  localparam CLK_FREQ_inst  = 10000;
+  localparam BAUD_RATE_inst = 1000;
   
   // Instantiate DUT  
   uart_top 
@@ -55,6 +49,7 @@ module uart_top_TB ();
   
   // Define clock signal
   localparam CLOCK_PERIOD = 5;
+  
   always
     #(CLOCK_PERIOD/2) rClk <= !rClk;
  
@@ -67,12 +62,77 @@ module uart_top_TB ();
         rRst = 0;
     
        #(10*CLOCK_PERIOD);
-             rA <=  512'h9f1f1e4aa803fd562fdf6769a1d881566987156aa3c628590c55bdf3f0a3fcdf3381a49febcdb5370a28672cce61332f9ac74025d3ebb8340a262a785e71ec72;
-      rB <= 512'he39ff3431ba8575e5480a5cca6dd873fdf1671e578d85b3d78c5a8507a6ce39a9493a701d04a0ccef7de1d844bdeb16e7071cf720edb42efa21229ccf588fff7;
-      #CLOCK_PERIOD;
-      // send bytes
-      for(i = 0; i < 256; i = i + 1) begin
-          rTxByte = rA[8*NBYTES-1:NBYTES*8-8];
+       
+       
+//       // OPCODE
+//       rTxByte = 8'b00; 
+//       rTxStart = 1;
+//       #CLOCK_PERIOD
+//       rTxStart = 0;
+          
+//       wait(wTxDone == 1);
+//       #CLOCK_PERIOD;
+       
+      // OPERAND 1
+          
+//     for(i = 0; i < 3; i = i + 1) begin // add operand width = 1024, we send NBYTES = 128 
+//          rTxByte = 8'hff;
+//          rTxStart = 1;
+//          #CLOCK_PERIOD
+//          rTxStart = 0;
+          
+//          wait(wTxDone == 1);
+//          #CLOCK_PERIOD;
+//      end
+      
+//          rTxByte = 8'hfF;
+//          rTxStart = 1;
+//          #CLOCK_PERIOD
+//          rTxStart = 0;
+          
+//          wait(wTxDone == 1);
+//          #CLOCK_PERIOD;
+
+      
+//     // OPERAND 2     
+          
+//     for(i = 0; i < 3; i = i + 1) begin // add operand width = 1024, we send NBYTES = 128 
+//          rTxByte = 8'hff;
+//          rTxStart = 1;
+//          #CLOCK_PERIOD
+//          rTxStart = 0;
+          
+//          wait(wTxDone == 1);
+//          #CLOCK_PERIOD;
+//      end
+      
+//          rTxByte = 8'h0F;
+//          rTxStart = 1;
+//          #CLOCK_PERIOD
+//          rTxStart = 0;
+          
+//          wait(wTxDone == 1);
+//          #CLOCK_PERIOD;
+      
+//      // Let it run for a while
+//      #(1000*CLOCK_PERIOD); 
+      
+      
+ /*     
+      
+      // OPCODE 2
+       rTxByte = 8'b10; //  OPCODE
+       rTxStart = 1;
+       #CLOCK_PERIOD
+       rTxStart = 0;
+          
+       wait(wTxDone == 1);
+       #CLOCK_PERIOD;
+       
+      // OPERAND 3
+          
+     for(i = 0; i < 3; i = i + 1) begin // add operand width = 1024, we send NBYTES = 128 
+          rTxByte = 8'h00;
           rTxStart = 1;
           #CLOCK_PERIOD
           rTxStart = 0;
@@ -80,8 +140,20 @@ module uart_top_TB ();
           wait(wTxDone == 1);
           #CLOCK_PERIOD;
       end
-       for(i = 0; i < 256; i = i + 1) begin
-          rTxByte = rB[8*NBYTES-1:NBYTES*8-8];
+      
+          rTxByte = 8'h0F;
+          rTxStart = 1;
+          #CLOCK_PERIOD
+          rTxStart = 0;
+          
+          wait(wTxDone == 1);
+          #CLOCK_PERIOD;   
+          
+          
+     // OPERAND 4
+          
+     for(i = 0; i < 3; i = i + 1) begin // add operand width = 1024, we send NBYTES = 128 
+          rTxByte = 8'h00;
           rTxStart = 1;
           #CLOCK_PERIOD
           rTxStart = 0;
@@ -89,15 +161,36 @@ module uart_top_TB ();
           wait(wTxDone == 1);
           #CLOCK_PERIOD;
       end
-      wait(wRxDone);
+      
+          rTxByte = 8'h0F;
+          rTxStart = 1;
+          #CLOCK_PERIOD
+          rTxStart = 0;
+          
+          wait(wTxDone == 1);
+          #CLOCK_PERIOD;
+          
+       // Let it run for a while
+      #(1000*CLOCK_PERIOD); */
       
       
-      // Let it run for a while
-      #(10000*CLOCK_PERIOD);
-      
-      
-      
-            
+      // mac 3x 16 bit test
+       
+     for(i=0; i < 128; i=i+1) begin
+          // opcode
+            rTxByte = 8'b10;
+            rTxStart = 1;
+            #CLOCK_PERIOD
+            rTxStart = 0;
+              
+            wait(wTxDone == 1);
+            #CLOCK_PERIOD;
+        end
+          
+       wait(wRxDone == 1);
+       #CLOCK_PERIOD;
+          
+
       $stop;
            
     end

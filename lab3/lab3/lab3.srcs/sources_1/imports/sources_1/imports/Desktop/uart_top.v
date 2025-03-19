@@ -18,14 +18,14 @@ module uart_top #(
   reg [NBYTES*8-1:0] rBuffer;
   
   // State definition  
-  localparam s_IDLE         = 3'b000;
-  localparam s_WAIT_RX_OP1  = 3'b001;
-  localparam s_WAIT_RX_OP2  = 3'b010;
-  localparam s_START_ADD    = 3'b011;
-  localparam s_WAIT_ADD     = 3'b100;
-  localparam s_TX           = 3'b101;
-  localparam s_WAIT_TX      = 3'b110;
-  localparam s_DONE         = 3'b111;
+  localparam s_IDLE         = 3'b000;   //0
+  localparam s_WAIT_RX_OP1  = 3'b001;   //1
+  localparam s_WAIT_RX_OP2  = 3'b010;   //2
+  localparam s_START_ADD    = 3'b011;   //3
+  localparam s_WAIT_ADD     = 3'b100;   //4
+  localparam s_TX           = 3'b101;   //5
+  localparam s_WAIT_TX      = 3'b110;   //6
+  localparam s_DONE         = 3'b111;   //7
    
   // Declare all variables needed for the finite state machine 
   // -> the FSM state
@@ -138,7 +138,7 @@ module uart_top #(
             if (wRxDone == 1 && rCntRx == (NBYTES-2))begin
                 rCntRx <= rCntRx;
                 rOpB <= { rBuffer[NBYTES*8-9:0], wRxByte };      
-                rFSM <= s_TX;
+                rFSM <= s_START_ADD;
             end else if (wRxDone == 1) begin
                 rCntRx <= rCntRx + 1;
                 rBuffer <= { rBuffer[NBYTES*8-9:0], wRxByte };  
