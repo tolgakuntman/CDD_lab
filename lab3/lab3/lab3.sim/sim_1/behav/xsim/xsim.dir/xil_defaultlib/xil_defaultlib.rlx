@@ -1,0 +1,9 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sim_1/imports/Downloads/mp_adder_TB.v,1742368938,verilog,,,,mp_adder_TB,,,,,,,,
+Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/Downloads/mp_adder.v,1742368935,verilog,,Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/new/ripple_carry_adder_Nb.v,,mp_adder,,,,,,,,
+Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/new/full_adder.v,1742371039,verilog,,Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/Downloads/mp_adder.v,,full_adder,,,,,,,,
+Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/new/ripple_carry_adder_Nb.v,1739954769,verilog,,Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sim_1/imports/Downloads/mp_adder_TB.v,,ripple_carry_adder_Nb,,,,,,,,
