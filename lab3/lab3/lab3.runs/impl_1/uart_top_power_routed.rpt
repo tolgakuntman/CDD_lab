@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Wed Mar 19 11:43:34 2025
+| Date             : Thu Mar 20 12:40:29 2025
 | Host             : Gok2s_Victus running 64-bit major release  (build 9200)
 | Command          : report_power -file uart_top_power_routed.rpt -pb uart_top_power_summary_routed.pb -rpx uart_top_power_routed.rpx
 | Design           : uart_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.108        |
+| Total On-Chip Power (W)  | 0.125        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.002        |
+| Dynamic (W)              | 0.019        |
 | Device Static (W)        | 0.106        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 83.8         |
-| Junction Temperature (C) | 26.2         |
+| Max Ambient (C)          | 83.6         |
+| Junction Temperature (C) | 26.4         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      174 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       82 |     53200 |            0.15 |
-|   Register     |    <0.001 |       67 |    106400 |            0.06 |
+| Clocks         |     0.014 |        3 |       --- |             --- |
+| Slice Logic    |     0.003 |     6509 |       --- |             --- |
+|   LUT as Logic |     0.003 |     2194 |     53200 |            4.12 |
+|   Register     |    <0.001 |     3745 |    106400 |            3.52 |
 |   CARRY4       |    <0.001 |        3 |     13300 |            0.02 |
-|   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |    <0.001 |      119 |       --- |             --- |
+|   Others       |     0.000 |        8 |       --- |             --- |
+| Signals        |     0.002 |     3854 |       --- |             --- |
 | I/O            |    <0.001 |        4 |       125 |            3.20 |
 | Static Power   |     0.106 |          |           |                 |
-| Total          |     0.108 |          |           |                 |
+| Total          |     0.125 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.009 |       0.002 |      0.007 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.026 |       0.019 |      0.007 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -144,10 +144,11 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------+-----------+
-| Name     | Power (W) |
-+----------+-----------+
-| uart_top |     0.002 |
-+----------+-----------+
++-----------------+-----------+
+| Name            | Power (W) |
++-----------------+-----------+
+| uart_top        |     0.019 |
+|   MP_ADDER_INST |     0.010 |
++-----------------+-----------+
 
 
