@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../final_project_cdd.srcs/sources_1/new/cla.v" \
+"../../../../final_project_cdd.srcs/sources_1/imports/imports/new/full_adder.v" \
+"../../../../final_project_cdd.srcs/sources_1/new/mp_adder.v" \
+"../../../../final_project_cdd.srcs/sources_1/imports/imports/new/ripple_carry_adder_Nb.v" \
+"../../../../final_project_cdd.srcs/sim_1/new/cla_TB.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

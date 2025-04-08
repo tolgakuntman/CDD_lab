@@ -1,0 +1,6 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+          15000000000000000000000000000
+          15000000000000000000000000000
+Test Passed - Correct Addition
+$stop called at time : 400 ns : File "//psf/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sim_1/new/cla_TB.v" Line 81

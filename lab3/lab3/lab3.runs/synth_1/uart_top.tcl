@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.runs/synth_1/uart_top.tcl"
+  variable script "Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.runs/synth_1/uart_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,29 +70,32 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param synth.incrementalSynthesisCache C:/Users/tolgakuntman/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-1952-TOLGAKUNTMA6A58/incrSyn
 set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/wt [current_project]
-set_property parent.project_path C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.xpr [current_project]
+set_property webtalk.parent_dir Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.cache/wt [current_project]
+set_property parent.project_path Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_output_repo c:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.cache/ip [current_project]
+set_property ip_output_repo z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/new/full_adder.v
-  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/Downloads/mp_adder.v
-  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/new/ripple_carry_adder_Nb.v
-  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/new/uart_rx.v
-  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/imports/Desktop/uart_tx.v
-  C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/imports/Desktop/uart_top.v
+  Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/new/full_adder.v
+  Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/Downloads/mp_adder.v
+  Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/new/ripple_carry_adder_Nb.v
+  Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/new/uart_rx.v
+  Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/imports/Desktop/uart_tx.v
+  Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/sources_1/imports/sources_1/imports/Desktop/uart_top.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -103,8 +106,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/constrs_1/imports/Desktop/PYNQ-Z2v1.0.xdc
-set_property used_in_implementation false [get_files C:/Users/Goktug/Desktop/CDD_LAB/CDD_lab/lab3/lab3/lab3.srcs/constrs_1/imports/Desktop/PYNQ-Z2v1.0.xdc]
+read_xdc Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/constrs_1/imports/Desktop/PYNQ-Z2v1.0.xdc
+set_property used_in_implementation false [get_files Z:/Desktop/cdd_labs/cdd_lab_git/lab3/lab3/lab3.srcs/constrs_1/imports/Desktop/PYNQ-Z2v1.0.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
