@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Wed Apr  2 17:20:30 2025
-// Host        : TOLGAKUNTMA6A58 running 64-bit major release  (build 9200)
+// Date        : Wed Apr 16 12:04:04 2025
+// Host        : DESKTOP-B6M86Q2 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/bd/design_1/ip/design_1_Debounce_Switch_0_0/design_1_Debounce_Switch_0_0_sim_netlist.v
+//               c:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/bd/design_1/ip/design_1_Debounce_Switch_0_0/design_1_Debounce_Switch_0_0_sim_netlist.v
 // Design      : design_1_Debounce_Switch_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,7 +19,7 @@ module design_1_Debounce_Switch_0_0
    (i_Clk,
     i_Switch,
     o_Switch);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_Clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_Clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_i_Clk_0, INSERT_VIP 0" *) input i_Clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_Clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_Clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_iClk, INSERT_VIP 0" *) input i_Clk;
   input i_Switch;
   output o_Switch;
 

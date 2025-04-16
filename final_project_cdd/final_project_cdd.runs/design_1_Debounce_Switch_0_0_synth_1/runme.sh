@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.runs/design_1_Debounce_Switch_0_0_synth_1'
+HD_PWD='C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.runs/design_1_Debounce_Switch_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

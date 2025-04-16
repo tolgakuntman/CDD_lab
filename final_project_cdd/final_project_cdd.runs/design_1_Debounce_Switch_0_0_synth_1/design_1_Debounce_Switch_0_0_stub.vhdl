@@ -1,8 +1,8 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Wed Apr  2 17:20:08 2025
--- Host        : TOLGAKUNTMA6A58 running 64-bit major release  (build 9200)
+-- Date        : Wed Apr 16 12:04:03 2025
+-- Host        : DESKTOP-B6M86Q2 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_Debounce_Switch_0_0_stub.vhdl
 -- Design      : design_1_Debounce_Switch_0_0

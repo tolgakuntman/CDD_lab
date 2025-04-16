@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.runs/synth_1'
+HD_PWD='C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log mp_adder.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mp_adder.tcl
+EAStep vivado -log uart_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_top.tcl
