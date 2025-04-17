@@ -5,10 +5,10 @@ module mp_adder #(
     //   that way the number of iterations for the addition is an integer number
     // if the operands you want to add have an OPERAND_WIDTH non-multiple of ADDER_WIDTH
     //   you'll have to extend them by padding them with zeroes
-    parameter OPERAND_WIDTH = 512,
-    parameter ADDER_WIDTH   = 32,
+    parameter OPERAND_WIDTH = 1024,
+    parameter ADDER_WIDTH   = 512,
     parameter N_ITERATIONS  = OPERAND_WIDTH / ADDER_WIDTH,
-    parameter ADDER_TYPE = 0,
+    parameter ADDER_TYPE = 8,
     parameter BLOCK_WIDTH = 64,
     parameter SUB_BLOCK_WIDTH = 16
     )
@@ -82,15 +82,95 @@ module mp_adder #(
     wire                    carry_out;
 
     // define adder types
-    localparam CLA =   4'b0000;
-    localparam RCA =   4'b0001;
+    localparam RCA =   4'b0000;
+    localparam CBA =   4'b0001;
+    localparam CLA =   4'b0010;
     localparam BCLA =  4'b0011;
     localparam CSelA = 4'b0100;
     localparam GFA =   4'b0101;
     localparam IGFA =  4'b0110;
     localparam RCACC = 4'b0111;
     localparam CCA   =  4'b1000;
-            carry_lookahead_adder #( .WIDTH(ADDER_WIDTH) ) 
+
+
+
+//            carry_lookahead_adder #( .WIDTH(ADDER_WIDTH) ) 
+//                adder_inst   (
+//                    .iA( operandA ), 
+//                    .iB( operandB ),
+//                    .iC( carry_in ),
+//                    .oS(result),
+//                    .oC(carry_out)
+//                  );
+//    case(ADDER_TYPE)
+//        RCA: begin
+//            ripple_adder #( .N(ADDER_WIDTH) ) 
+//            adder_inst   (
+//                .iA( operandA ), 
+//                .iB( operandB ),
+//                .iC( carry_in ),
+//                .oS(result),
+//                .oC(carry_out)
+//              );
+//        end
+    
+//        CBA: begin
+//            carry_bypass_adder #( .WIDTH(ADDER_WIDTH), .BLOCK_WIDTH(BLOCK_WIDTH) ) 
+//            adder_inst   (
+//                .iA( operandA ), 
+//                .iB( operandB ),
+//                .iC( carry_in ),
+//                .oS(result),
+//                .oC(carry_out)
+//              );
+//        end
+        
+//        CLA: begin
+//            carry_lookahead_adder #( .WIDTH(ADDER_WIDTH) ) 
+//                adder_inst   (
+//                    .iA( operandA ), 
+//                    .iB( operandB ),
+//                    .iC( carry_in ),
+//                    .oS(result),
+//                    .oC(carry_out)
+//                  );
+//        end
+        
+//        BCLA: begin
+//            blocked_carry_lookahead_adder #( .WIDTH(ADDER_WIDTH), .BLOCK_WIDTH(BLOCK_WIDTH) ) 
+//                adder_inst   (
+//                    .iA( operandA ), 
+//                    .iB( operandB ),
+//                    .iC( carry_in ),
+//                    .oS(result),
+//                    .oC(carry_out)
+//                  );
+//        end
+        
+//        CSelA: begin
+//            carry_select_adder #( .WIDTH(ADDER_WIDTH), .BLOCK_WIDTH(BLOCK_WIDTH) ) 
+//                adder_inst   (
+//                    .iA( operandA ), 
+//                    .iB( operandB ),
+//                    .iC( carry_in ),
+//                    .oS(result),
+//                    .oC(carry_out)
+//                  );
+//        end
+        
+//        GFA: begin
+//            giulio_fast_adder #( .WIDTH(ADDER_WIDTH), .BLOCK_WIDTH(BLOCK_WIDTH) ) 
+//                adder_inst   (
+//                    .iA( operandA ), 
+//                    .iB( operandB ),
+//                    .iC( carry_in ),
+//                    .oS(result),
+//                    .oC(carry_out)
+//                  );
+//        end
+              
+//        IGFA: begin
+            hybrid_fast_adder #( .WIDTH(ADDER_WIDTH ) )
                 adder_inst   (
                     .iA( operandA ), 
                     .iB( operandB ),
@@ -98,32 +178,29 @@ module mp_adder #(
                     .oS(result),
                     .oC(carry_out)
                   );
- //   case(ADDER_TYPE)
-            
-  //      CLA: begin
-    //        cla #( .WIDTH(ADDER_WIDTH) ) 
-     //           adder_inst   (
-      //              .iA( operandA ), 
-       //             .iB( operandB ),
-       //             .Cin( carry_in ),
-       //             .oSum(result),
-      //              .Cout(carry_out)
-       //           );
-  //      end
-//        RCA: begin
-  //          ripple_carry_adder_Nb #( .N(ADDER_WIDTH) ) 
-    //        adder_inst   (
-      //          .iA( operandA ), 
-        //        .iB( operandB ),
-          //      .iC( carry_in ),
-            //    .oSum(result),
-              //  .oC(carry_out)
-              //);
-      ///  end
-    
-
+//        end
         
-
+//        RCACC: begin
+//            rca_carry_chain #( .WIDTH(ADDER_WIDTH) ) 
+//                adder_inst   (
+//                    .iA( operandA ), 
+//                    .iB( operandB ),
+//                    .iC( carry_in ),
+//                    .oS(result),
+//                    .oC(carry_out)
+//                  );
+//        end
+        
+//        CCA: begin
+//            carry_chain_adder #( .WIDTH(ADDER_WIDTH), .BLOCK_WIDTH(BLOCK_WIDTH) ) 
+//                adder_inst   (
+//                    .iA( operandA ), 
+//                    .iB( operandB ),
+//                    .iC( carry_in ),
+//                    .oS(result),
+//                    .oC(carry_out)
+//                  );
+//        end
         
 //    endcase
 

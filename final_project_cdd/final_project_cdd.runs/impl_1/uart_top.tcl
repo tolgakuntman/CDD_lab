@@ -114,6 +114,7 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "Implementation" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -123,6 +124,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 1
+  set_param xicom.use_bs_reader 1
   open_checkpoint uart_top_routed.dcp
   set_property webtalk.parent_dir C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.cache/wt [current_project]
 set_property TOP uart_top [current_fileset]

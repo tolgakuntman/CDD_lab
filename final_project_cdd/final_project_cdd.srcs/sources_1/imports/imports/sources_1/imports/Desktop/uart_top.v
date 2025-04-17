@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
 module uart_top #(
-    parameter   OPERAND_WIDTH = 512,
-    parameter   ADDER_WIDTH   = 32,
+    parameter   OPERAND_WIDTH = 1024,
+    parameter   ADDER_WIDTH   = 256,
     parameter   NBYTES        = OPERAND_WIDTH / 8 + 1,    
     // values for the UART (in case we want to change them)
     parameter   CLK_FREQ      = 125_000_000,
