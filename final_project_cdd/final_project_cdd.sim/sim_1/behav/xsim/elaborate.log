@@ -1,21 +1,27 @@
 Vivado Simulator 2020.1
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 39c14927519e4582b41410f29dddd2f2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot mp_adder_TB_behav xil_defaultlib.mp_adder_TB xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 39c14927519e4582b41410f29dddd2f2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot uart_top_TB_behav xil_defaultlib.uart_top_TB xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'oResult' [C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/imports/imports/sources_1/imports/Desktop/uart_top.v:124]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_rx(CLK_FREQ=100,BAUD_RATE=1...
+Compiling module xil_defaultlib.uart_tx(CLK_FREQ=100,BAUD_RATE=1...
 Compiling module xil_defaultlib.partial_full_adder
 Compiling module xil_defaultlib.carry_lookahead_adder(WIDTH=8)
 Compiling module xil_defaultlib.blocked_carry_lookahead_adder(WI...
 Compiling module xil_defaultlib.carry_lookahead_adder(WIDTH=16)
 Compiling module xil_defaultlib.blocked_carry_lookahead_adder(WI...
-Compiling module xil_defaultlib.blocked_carry_lookahead_adder(WI...
-Compiling module xil_defaultlib.improved_giulio_fast_adder
+Compiling module xil_defaultlib.hybrid_fast_adder
 Compiling module xil_defaultlib.mp_adder(ADDER_WIDTH=256,ADDER_T...
-Compiling module xil_defaultlib.mp_adder_TB
+Compiling module xil_defaultlib.carry_lookahead_adder(WIDTH=25)
+Compiling module xil_defaultlib.fpu_add
+Compiling module xil_defaultlib.fpu_core
+Compiling module xil_defaultlib.uart_top(CLK_FREQ=100,BAUD_RATE=...
+Compiling module xil_defaultlib.uart_top_TB
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot mp_adder_TB_behav
+Built simulation snapshot uart_top_TB_behav

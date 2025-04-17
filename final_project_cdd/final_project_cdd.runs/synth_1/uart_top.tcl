@@ -70,8 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
-set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
@@ -91,6 +89,8 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/blocked_carry_lookahead_adder.v
   C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/imports/Downloads/carry_lookahead_adder.v
+  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/fpu_add.v
+  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/fpu_core.v
   C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/hybrid_fast_adder.v
   C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/mp_adder.v
   C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/imports/Downloads/partial_full_adder.v

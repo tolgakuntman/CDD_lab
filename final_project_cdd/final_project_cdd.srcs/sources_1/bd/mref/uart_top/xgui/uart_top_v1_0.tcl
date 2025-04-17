@@ -7,7 +7,9 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "BAUD_RATE" -parent ${Page_0}
   ipgui::add_param $IPINST -name "CLK_FREQ" -parent ${Page_0}
   ipgui::add_param $IPINST -name "NBYTES" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "NBYTES_FPU" -parent ${Page_0}
   ipgui::add_param $IPINST -name "OPERAND_WIDTH" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "OPERAND_WIDTH_FPU" -parent ${Page_0}
 
 
 }
@@ -48,12 +50,30 @@ proc validate_PARAM_VALUE.NBYTES { PARAM_VALUE.NBYTES } {
 	return true
 }
 
+proc update_PARAM_VALUE.NBYTES_FPU { PARAM_VALUE.NBYTES_FPU } {
+	# Procedure called to update NBYTES_FPU when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.NBYTES_FPU { PARAM_VALUE.NBYTES_FPU } {
+	# Procedure called to validate NBYTES_FPU
+	return true
+}
+
 proc update_PARAM_VALUE.OPERAND_WIDTH { PARAM_VALUE.OPERAND_WIDTH } {
 	# Procedure called to update OPERAND_WIDTH when any of the dependent parameters in the arguments change
 }
 
 proc validate_PARAM_VALUE.OPERAND_WIDTH { PARAM_VALUE.OPERAND_WIDTH } {
 	# Procedure called to validate OPERAND_WIDTH
+	return true
+}
+
+proc update_PARAM_VALUE.OPERAND_WIDTH_FPU { PARAM_VALUE.OPERAND_WIDTH_FPU } {
+	# Procedure called to update OPERAND_WIDTH_FPU when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.OPERAND_WIDTH_FPU { PARAM_VALUE.OPERAND_WIDTH_FPU } {
+	# Procedure called to validate OPERAND_WIDTH_FPU
 	return true
 }
 
@@ -81,5 +101,15 @@ proc update_MODELPARAM_VALUE.CLK_FREQ { MODELPARAM_VALUE.CLK_FREQ PARAM_VALUE.CL
 proc update_MODELPARAM_VALUE.BAUD_RATE { MODELPARAM_VALUE.BAUD_RATE PARAM_VALUE.BAUD_RATE } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.BAUD_RATE}] ${MODELPARAM_VALUE.BAUD_RATE}
+}
+
+proc update_MODELPARAM_VALUE.OPERAND_WIDTH_FPU { MODELPARAM_VALUE.OPERAND_WIDTH_FPU PARAM_VALUE.OPERAND_WIDTH_FPU } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.OPERAND_WIDTH_FPU}] ${MODELPARAM_VALUE.OPERAND_WIDTH_FPU}
+}
+
+proc update_MODELPARAM_VALUE.NBYTES_FPU { MODELPARAM_VALUE.NBYTES_FPU PARAM_VALUE.NBYTES_FPU } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.NBYTES_FPU}] ${MODELPARAM_VALUE.NBYTES_FPU}
 }
 
