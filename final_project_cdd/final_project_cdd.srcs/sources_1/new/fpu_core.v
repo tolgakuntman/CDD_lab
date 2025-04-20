@@ -1,5 +1,4 @@
 `timescale 1ns / 1ps
-
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -11,13 +10,6 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
 
 module fpu_core (
@@ -60,6 +52,7 @@ module fpu_core (
     wire [47:0] wMantProd;
     wire [7:0]  wExpMul;
     wire        wSignMul;
+    wire        wDoneMul;
 
     localparam OP_FPU_ADD = 8'b00000001;
     localparam OP_FPU_SUB = 8'b00000010;
@@ -83,6 +76,9 @@ module fpu_core (
     );
 
     fpu_mul fpu_mul_inst (
+        .iClk(iClk),
+        .iRst(iRst),
+        .iStart(rStartExe),
         .iSignA(signA),
         .iSignB(signB),
         .iExpA(expA),
@@ -91,7 +87,8 @@ module fpu_core (
         .iMantB(mantB),
         .oSign(wSignMul),
         .oExp(wExpMul),
-        .oMantProd(wMantProd)
+        .oMantProd(wMantProd),
+        .oDone(wDoneMul)
     );
 
     always @(posedge iClk) begin
@@ -119,39 +116,35 @@ module fpu_core (
                     mantB <= (iB[30:23] == 8'b0) ? {1'b0, iB[22:0]} : {1'b1, iB[22:0]};
 
                     rStartExe <= 1;
-                    if (iOpCode == OP_FPU_MUL) begin
-                        rState <= WAIT_EXE;
-                    end else begin
-                        rState <= START_EXE;
-                    end
+                    rState <= START_EXE;
                 end
+
                 START_EXE: begin
                     rStartExe <= 0;
                     rState <= WAIT_EXE;
                 end
+
                 WAIT_EXE: begin
                     rStartExe <= 0;
-                if (iOpCode == OP_FPU_MUL) begin
-                    // Always take the top 25 bits (including implicit bit)
-                    mantRes <= wMantProd[45:21];  // Initial assumption (we'll normalize later)
-                    expRes  <= wExpMul;
-                    signRes <= wSignMul;
-                    rState  <= PACK;  // ? send to normalization
-                
-                    end else if (wDoneExe) begin
+                    if (iOpCode == OP_FPU_MUL && wDoneMul) begin
+                        mantRes <= wMantProd[47:23];
+                        expRes  <= wExpMul;
+                        signRes <= wSignMul;
+                        rState  <= NORMALIZE;
+                    end else if ((iOpCode == OP_FPU_ADD || iOpCode == OP_FPU_SUB) && wDoneExe) begin
                         mantRes <= wMantSum;
                         expRes  <= wExpOut;
                         signRes <= wSignOut;
-                        rState <= NORMALIZE;
+                        rState  <= NORMALIZE;
                     end
                 end
 
                 NORMALIZE: begin
                     if (mantRes[24]) begin
                         mantRes <= mantRes >> 1;
-                        expRes  <= expRes;
+                        expRes  <= expRes + 1;
                     end else if (mantRes[23] == 0 && expRes > 0) begin
-                        mantRes <= mantRes >> 1;
+                        mantRes <= mantRes << 1;
                         expRes  <= expRes - 1;
                     end else begin
                         rState <= PACK;

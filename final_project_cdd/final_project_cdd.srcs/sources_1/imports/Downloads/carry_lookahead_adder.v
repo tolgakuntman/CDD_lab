@@ -1,19 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// University: KU Leuven Group T Campus 
-// Engineer: Yusuf Hussein
-// 
-// Create Date: 03/29/2024
-// Module Name: carry_lookahead_adder
-// Project Name: CDD Project
-// Description: 
-// 
-// Dependencies: partial_full_adder
-// 
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module carry_lookahead_adder
 #( parameter WIDTH = 4 )

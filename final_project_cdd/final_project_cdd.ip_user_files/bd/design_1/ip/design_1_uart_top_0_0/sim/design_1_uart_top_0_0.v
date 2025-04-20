@@ -67,11 +67,13 @@ input wire iRx;
 output wire oTx;
 
   uart_top #(
-    .OPERAND_WIDTH(512),
-    .ADDER_WIDTH(32),
-    .NBYTES(65),
+    .OPERAND_WIDTH(1024),
+    .ADDER_WIDTH(256),
+    .NBYTES(129),
     .CLK_FREQ(125000000),
-    .BAUD_RATE(115200)
+    .BAUD_RATE(115200),
+    .OPERAND_WIDTH_FPU(32),
+    .NBYTES_FPU(5)
   ) inst (
     .iClk(iClk),
     .iRst(iRst),

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1744933100">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1745191308">
   <File Type="PA-TCL" Name="uart_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="uart_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="uart_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="uart_top.vds"/>
   <File Type="RDS-UTIL" Name="uart_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="uart_top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="uart_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="uart_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="uart_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/blocked_carry_lookahead_adder.v">
@@ -24,6 +27,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/carry_save_adder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/fpu_add.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -32,6 +42,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/fpu_core.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fpu_mul.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: KULeuven
+// Engineer: Tolga Kuntman
 // 
 // Create Date: 04/18/2025 07:02:12 PM
 // Design Name: 

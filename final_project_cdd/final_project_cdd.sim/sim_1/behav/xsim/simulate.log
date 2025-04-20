@@ -1,3 +1,3 @@
 Vivado Simulator 2020.1
 Time resolution is 1 ps
-$stop called at time : 69431 ns : File "C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sim_1/new/uart_top_TB.v" Line 133
+$stop called at time : 268887 ns : File "C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sim_1/new/uart_top_TB.v" Line 114
