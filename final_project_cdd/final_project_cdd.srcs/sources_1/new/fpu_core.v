@@ -30,7 +30,7 @@ module fpu_core (
     localparam NORMALIZE = 3'b100;
     localparam PACK      = 3'b101;
     localparam DONE      = 3'b110;
-
+    localparam ROUND     = 3'b111;
     reg [2:0] rState;
 
     reg        signA, signB;
@@ -40,10 +40,11 @@ module fpu_core (
     reg        signRes;
     reg [7:0]  expRes;
     reg [24:0] mantRes;
-
+    reg [23:0] mantLowProduct;
     reg rStartExe;
     wire wDoneExe;
 
+    reg guardBit, roundBit, stickyBit;
     wire [24:0] wMantSum;
     wire [7:0]  wExpOut;
     wire        wSignOut;
@@ -128,15 +129,25 @@ module fpu_core (
                     rStartExe <= 0;
                     if (iOpCode == OP_FPU_MUL && wDoneMul) begin
                         mantRes <= wMantProd[47:23];
+                        stickyBit <= |wMantProd[20:0];
+                        roundBit <= wMantProd[21];
+                        guardBit <= wMantProd[22];
                         expRes  <= wExpMul;
                         signRes <= wSignMul;
-                        rState  <= NORMALIZE;
+                        rState  <= ROUND;
                     end else if ((iOpCode == OP_FPU_ADD || iOpCode == OP_FPU_SUB) && wDoneExe) begin
                         mantRes <= wMantSum;
                         expRes  <= wExpOut;
                         signRes <= wSignOut;
                         rState  <= NORMALIZE;
                     end
+                end
+
+                ROUND: begin
+                    if (guardBit && (roundBit || stickyBit)) begin
+                        mantRes <= mantRes + 1;
+                    end
+                    rState <= NORMALIZE;
                 end
 
                 NORMALIZE: begin

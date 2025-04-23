@@ -27,6 +27,7 @@ module fpu_mul #(
 );
 
     localparam NUM_PARTIALS = EXT_WIDTH / 2;
+    localparam MID_CSA = (NUM_PARTIALS - 2) / 2;
 
     reg [2:0] stage;
 
@@ -64,23 +65,44 @@ module fpu_mul #(
     endgenerate
 
     reg [PROD_WIDTH-1:0] r_partial_products [NUM_PARTIALS-1:0];
-    reg [PROD_WIDTH-1:0] r_csa_sum, r_csa_carry;
+    reg [PROD_WIDTH-1:0] r_csa_sum_stage1, r_csa_carry_stage1;
+    reg [PROD_WIDTH-1:0] r_csa_sum_stage2, r_csa_carry_stage2;
     reg [PROD_WIDTH-1:0] r_final_sum;
     reg [7:0] r_exp_sum, r_exp_bias;
 
-    wire [PROD_WIDTH-1:0] wi1 [NUM_PARTIALS-2:0];
-    wire [PROD_WIDTH:0]   wi2 [NUM_PARTIALS-2:0];
+    wire [PROD_WIDTH-1:0] wi1_a [MID_CSA:0];
+    wire [PROD_WIDTH:0]   wi2_a [MID_CSA:0];
+
+    wire [PROD_WIDTH-1:0] wi1_b [NUM_PARTIALS-2-MID_CSA:0];
+    wire [PROD_WIDTH:0]   wi2_b [NUM_PARTIALS-2-MID_CSA:0];
+
+    reg [PROD_WIDTH-1:0] wi1_b_in;
+    reg [PROD_WIDTH:0]   wi2_b_in;
+
+    assign wi1_a[0] = r_partial_products[0];
+    assign wi2_a[0] = {1'b0, r_partial_products[1]};
+
+    assign wi1_b[0] = wi1_b_in;
+    assign wi2_b[0] = wi2_b_in;
 
     genvar k;
     generate
-        for (k = 0; k < NUM_PARTIALS-2; k = k + 1) begin : csa_chain
-            wire [PROD_WIDTH-1:0] s, c;
-            carry_save_adder #(.WIDTH(PROD_WIDTH)) CSA (
-                .iA(wi1[k]),
-                .iB(wi2[k][PROD_WIDTH-1:0]),
+        for (k = 0; k < MID_CSA; k = k + 1) begin : csa_first_half
+            carry_save_adder #(.WIDTH(PROD_WIDTH)) CSA_A (
+                .iA(wi1_a[k]),
+                .iB(wi2_a[k][PROD_WIDTH-1:0]),
                 .iC(r_partial_products[k+2]),
-                .oS(wi1[k+1]),
-                .oC(wi2[k+1])
+                .oS(wi1_a[k+1]),
+                .oC(wi2_a[k+1])
+            );
+        end
+        for (k = 0; k < NUM_PARTIALS-2-MID_CSA; k = k + 1) begin : csa_second_half
+            carry_save_adder #(.WIDTH(PROD_WIDTH)) CSA_B (
+                .iA(wi1_b[k]),
+                .iB(wi2_b[k][PROD_WIDTH-1:0]),
+                .iC(r_partial_products[k + MID_CSA + 2]),
+                .oS(wi1_b[k+1]),
+                .oC(wi2_b[k+1])
             );
         end
     endgenerate
@@ -88,8 +110,8 @@ module fpu_mul #(
     wire [PROD_WIDTH-1:0] final_sum;
     wire carry_out;
     carry_lookahead_adder #(.WIDTH(PROD_WIDTH)) CLA (
-        .iA(r_csa_sum),
-        .iB(r_csa_carry),
+        .iA(r_csa_sum_stage2),
+        .iB(r_csa_carry_stage2),
         .iC(1'b0),
         .oS(final_sum),
         .oC(carry_out)
@@ -116,28 +138,34 @@ module fpu_mul #(
                         stage <= 1;
                     end
                 end
-
                 1: begin
                     for (j = 0; j < NUM_PARTIALS; j = j + 1) begin
                         r_partial_products[j] <= booth_partial_products[j];
                     end
                     stage <= 2;
                 end
-
                 2: begin
-                    r_csa_sum   <= wi1[NUM_PARTIALS-2];
-                    r_csa_carry <= wi2[NUM_PARTIALS-2][PROD_WIDTH-1:0];
-                    r_exp_bias  <= r_exp_sum - 8'd127;
+                    wi1_b_in <= wi1_a[MID_CSA];
+                    wi2_b_in <= wi2_a[MID_CSA];
                     stage <= 3;
                 end
-
                 3: begin
-                    r_final_sum <= final_sum;
+                    r_csa_sum_stage1   <= wi1_b[NUM_PARTIALS-2-MID_CSA];
+                    r_csa_carry_stage1 <= wi2_b[NUM_PARTIALS-2-MID_CSA][PROD_WIDTH-1:0];
                     stage <= 4;
                 end
-
                 4: begin
-                    oMantProd <= r_final_sum;
+                    r_csa_sum_stage2   <= r_csa_sum_stage1;
+                    r_csa_carry_stage2 <= r_csa_carry_stage1;
+                    r_exp_bias  <= r_exp_sum - 8'd127;
+                    stage <= 6;
+                end
+                5: begin
+                    r_final_sum <= final_sum;
+                    stage <= 6;
+                end
+                6: begin
+                    oMantProd <= final_sum;
                     oExp      <= r_exp_bias;
                     oDone     <= 1;
                     stage     <= 0;
@@ -145,8 +173,5 @@ module fpu_mul #(
             endcase
         end
     end
-
-    assign wi1[0] = r_partial_products[0];
-    assign wi2[0] = {1'b0, r_partial_products[1]};
 
 endmodule

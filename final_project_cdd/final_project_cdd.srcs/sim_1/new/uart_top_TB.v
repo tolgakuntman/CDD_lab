@@ -106,10 +106,10 @@ module uart_top_TB ();
     send_fpu_op(8'h03, 32'hFF800000, 32'h7F800000); // -inf * +inf
     send_fpu_op(8'h03, 32'h4F000000, 32'h4F000000); // large * large (2^31 * 2^31)
     send_fpu_op(8'h03, 32'h3E4CCCCD, 32'h3DCCCCCD); // 0.2 * 0.1
-    send_fpu_op(8'h03, 32'h3F4CCCCD, 32'h3F19999A); // 0.8 * 0.6
-    send_fpu_op(8'h03, 32'h3FC00000, 32'h3FA00000); // 1.5 * 1.25
-    send_fpu_op(8'h03, 32'h3DCCCCCD, 32'h3DCCCCCD); // 0.1 * 0.1
-    send_fpu_op(8'h03, 32'h41200000, 32'h40A00000); // 10.0 * 5.0
+    send_fpu_op(8'h03, 32'h47f11f80, 32'h3F19999A); // 123455 * 786
+    send_fpu_op(8'h03, 32'h388b90c2, 32'h3FA00000); // 0.00006655 * 1.25
+    send_fpu_op(8'h03, 32'h3ef3a83a, 32'h3ff3ffff); // 0.47595212 * 1.9062499
+    send_fpu_op(8'h03, 32'h3dfcb924, 32'h4145851f); // 0.1234 * 12.345
 
     $stop;
   end

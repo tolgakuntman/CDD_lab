@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.runs/synth_1/uart_top.tcl"
+  variable script "C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.runs/synth_1/uart_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,36 +71,34 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.cache/wt [current_project]
-set_property parent.project_path C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.xpr [current_project]
+set_property webtalk.parent_dir C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.cache/wt [current_project]
+set_property parent.project_path C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_output_repo c:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.cache/ip [current_project]
+set_property ip_output_repo c:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/blocked_carry_lookahead_adder.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/imports/Downloads/carry_lookahead_adder.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/carry_save_adder.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/fpu_add.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/fpu_core.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/fpu_mul.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/hybrid_fast_adder.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/new/mp_adder.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/imports/Downloads/partial_full_adder.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/imports/imports/sources_1/new/uart_rx.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/imports/imports/sources_1/imports/Desktop/uart_tx.v
-  C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/sources_1/imports/imports/sources_1/imports/Desktop/uart_top.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/new/blocked_carry_lookahead_adder.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/imports/Downloads/carry_lookahead_adder.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/new/carry_save_adder.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/new/fpu_add.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/new/fpu_core.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/new/fpu_mul.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/new/hybrid_fast_adder.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/new/mp_adder.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/imports/Downloads/partial_full_adder.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/imports/imports/sources_1/new/uart_rx.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/imports/imports/sources_1/imports/Desktop/uart_tx.v
+  C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/sources_1/imports/imports/sources_1/imports/Desktop/uart_top.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -111,8 +109,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/constrs_1/imports/Desktop/PYNQ-Z2v1.0.xdc
-set_property used_in_implementation false [get_files C:/Users/User/Desktop/cdd_git/CDD_lab/final_project_cdd/final_project_cdd.srcs/constrs_1/imports/Desktop/PYNQ-Z2v1.0.xdc]
+read_xdc C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/constrs_1/imports/Desktop/PYNQ-Z2v1.0.xdc
+set_property used_in_implementation false [get_files C:/Mac/Home/Desktop/cdd_labs/cdd_lab_git/final_project_cdd/final_project_cdd.srcs/constrs_1/imports/Desktop/PYNQ-Z2v1.0.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
